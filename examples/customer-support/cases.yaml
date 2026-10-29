@@ -1,0 +1,17 @@
+version: 1
+cases:
+  - id: refund-window
+    prompt: "What is the refund window?"
+    stub_output: "Refunds are available within 30 days."
+    expected:
+      - type: contains
+        value: "30 days"
+      - type: forbidden
+        strings: ["password", "api_key"]
+  - id: shipping-cost
+    prompt: "How much is shipping?"
+    stub_output: "Shipping costs 5.0 dollars."
+    expected:
+      - type: numeric_close
+        value: 5.0
+        tolerance: 0.1
