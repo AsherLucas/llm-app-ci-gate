@@ -52,6 +52,10 @@ Exit 0 = PASS, exit 1 = FAIL. It writes `llm-ci-gate-report.md` and `llm-ci-gate
     path: .
 ```
 
+## Tutorial
+
+See [docs-tutorial.md](docs-tutorial.md) for a 5-minute walkthrough, plus the `examples/customer-support/` case set.
+
 ## Why one gate?
 
 LLM apps fail in three different ways at once: a prompt regresses, a tool call leaks a secret, and a prompt change doubles cost. Running three separate checks in CI is easy to skip one of. One gate, one report, one pass/fail makes it hard to forget.

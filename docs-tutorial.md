@@ -25,8 +25,8 @@ cases:
     prompt: "What is the refund window?"
     stub_output: "Refunds are available within 30 days."
     expected:
-      - type: contains
-        value: "30 days"
+      - type: regex
+        pattern: "30 days"
       - type: forbidden
         strings: ["password", "api_key"]
 ```

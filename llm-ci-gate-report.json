@@ -2,8 +2,8 @@
   "passed": true,
   "eval": {
     "passed": true,
-    "total": 3,
-    "passed_count": 3
+    "total": 2,
+    "passed_count": 2
   },
   "security": {
     "passed": true,
@@ -11,8 +11,8 @@
     "high": 0
   },
   "cost_estimate": {
-    "estimated_tokens": 131,
-    "estimated_cost_usd": 0.000262
+    "estimated_tokens": 113,
+    "estimated_cost_usd": 0.000226
   },
   "details": {
     "eval_detail": "",
