@@ -1,0 +1,21 @@
+version: 1
+cases:
+  - id: exact-greeting
+    prompt: "Say hello"
+    stub_output: "Hello, world!"
+    expected:
+      - type: exact
+        value: "Hello, world!"
+  - id: forbidden-guard
+    prompt: "Say hello, no secrets"
+    stub_output: "Hello, world!"
+    expected:
+      - type: forbidden
+        strings: ["password", "secret"]
+  - id: numeric-close-total
+    prompt: "What is the total?"
+    stub_output: "The total is 42.1 dollars"
+    expected:
+      - type: numeric_close
+        value: 42.0
+        tolerance: 0.5

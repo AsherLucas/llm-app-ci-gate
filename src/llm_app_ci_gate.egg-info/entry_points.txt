@@ -1,0 +1,2 @@
+[console_scripts]
+llm-ci-gate = llm_ci_gate.cli:main

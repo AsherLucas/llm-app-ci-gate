@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "llm-app-ci-gate"
+version = "0.1.0"
+description = "One CI gate for LLM apps: prompt evaluation, security scan, and cost estimate in a single report."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+authors = [{ name = "AsherLucas" }]
+keywords = ["llm", "agent", "ci", "evaluation", "security", "cost"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: Software Development :: Testing",
+]
+dependencies = ["prompt-eval-harness>=0.3.0", "llm-app-security-scanner>=0.2.0", "PyYAML>=6.0"]
+
+[project.urls]
+Homepage = "https://github.com/AsherLucas/llm-app-ci-gate"
+Repository = "https://github.com/AsherLucas/llm-app-ci-gate"
+Issues = "https://github.com/AsherLucas/llm-app-ci-gate/issues"
+
+[project.scripts]
+llm-ci-gate = "llm_ci_gate.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

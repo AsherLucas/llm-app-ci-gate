@@ -1,0 +1,34 @@
+name: "LLM App CI Gate"
+description: "Run prompt evaluation, security scan, and cost estimate as one CI gate"
+inputs:
+  cases:
+    description: "Path to the YAML case file"
+    required: false
+    default: "cases.yaml"
+  path:
+    description: "Directory to scan"
+    required: false
+    default: "."
+  threshold:
+    description: "Minimum eval pass rate, 0.0-1.0"
+    required: false
+    default: "1.0"
+  fail-on:
+    description: "Minimum security severity that fails the gate"
+    required: false
+    default: "high"
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+    - name: Run LLM App CI Gate
+      shell: bash
+      run: |
+        pip install "${{ github.action_path }}"
+        llm-ci-gate check --cases "${{ inputs.cases }}" --path "${{ inputs.path }}" --threshold "${{ inputs.threshold }}" --fail-on "${{ inputs.fail-on }}"
+branding:
+  icon: "shield"
+  color: "green"

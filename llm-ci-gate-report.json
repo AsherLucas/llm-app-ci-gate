@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "eval": {
+    "passed": true,
+    "total": 3,
+    "passed_count": 3
+  },
+  "security": {
+    "passed": true,
+    "findings": 0,
+    "high": 0
+  },
+  "cost_estimate": {
+    "estimated_tokens": 131,
+    "estimated_cost_usd": 0.000262
+  },
+  "details": {
+    "eval_detail": "",
+    "threshold": 1.0,
+    "fail_on": "high"
+  }
+}
