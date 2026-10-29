@@ -1,0 +1,16 @@
+version: 1
+cases:
+  - id: weather-tool-contract
+    prompt: "What is the weather in Cupertino?"
+    stub_output: '{"tool": "get_weather", "arguments": {"city": "Cupertino"}}'
+    expected:
+      - type: tool_call
+        name: get_weather
+        required_args: ["city"]
+  - id: rag-retrieval-recall
+    prompt: "Summarize the refund policy"
+    stub_output: "Based on doc-1 and doc-2, refunds are within 30 days."
+    expected:
+      - type: retrieval
+        expected_docs: ["doc-1", "doc-2"]
+        min_recall: 1.0
